@@ -494,11 +494,12 @@ onAuthStateChanged(auth, async (user) => {
     username = user.displayName;
 
     // Simpan user ke database
-    await setDoc(doc(db, "users", user.uid), {
-      name: user.displayName,
-      photo: user.photoURL,
-      uid: user.uid
-    });
+   await setDoc(doc(db, "users", user.uid), {
+  name: user.displayName,
+  photo: user.photoURL,
+  uid: user.uid,
+  email: user.email
+});
 
     document.getElementById("username-screen").style.display = "none";
     loadContacts(user.uid);
