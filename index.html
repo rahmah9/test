@@ -337,6 +337,9 @@ import { getAuth, signInWithPopup, signInWithRedirect, getRedirectResult, Google
   const db = getFirestore(app);
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
+  getRedirectResult(auth).catch((err) => {
+  console.error("Redirect login error:", err);
+});
   const messagesDiv = document.getElementById("messages");
   const input = document.getElementById("msg-input");
   const statusEl = document.getElementById("status");
