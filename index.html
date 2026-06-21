@@ -403,12 +403,11 @@ window.addContact = async () => {
     return;
   }
 
-  // Simpan ke contacts
- await setDoc(doc(db, "users", user.uid), {
-  name: user.displayName,
-  photo: user.photoURL,
-  uid: user.uid,
-  email: user.email
+// Simpan ke contacts
+await setDoc(doc(db, "users", currentUid, "contacts", found.uid), {
+  name: found.name,
+  photo: found.photo,
+  uid: found.uid
 });
 
   errEl.style.display = "none";
