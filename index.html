@@ -478,7 +478,12 @@ function openRoom(myUid, otherUid, otherName, itemEl) {
   });
 }
 window.loginGoogle = async () => {
-  await signInWithRedirect(auth, provider);
+  try {
+    await signInWithPopup(auth, provider);
+  } catch (err) {
+    console.error("Login error:", err.code, err.message);
+    alert("Login gagal: " + err.message);
+  }
 };
 
 onAuthStateChanged(auth, async (user) => {
