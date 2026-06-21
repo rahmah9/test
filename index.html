@@ -287,14 +287,17 @@
 
 <div style="display:flex; gap:16px; align-items:flex-start; width:100%; max-width:820px;">
 
-<div class="users-header">
-  Contacts
-  <button onclick="showAddContact()" id="add-btn">+</button>
-</div>
-<div id="add-contact-form" style="display:none; padding: 10px;">
-  <input type="text" id="contact-email" placeholder="Email Google..." style="width:100%; padding: 6px 10px; border: 0.5px solid rgba(0,0,0,0.18); border-radius: 8px; font-size: 13px; outline:none;" />
-  <button onclick="addContact()" style="margin-top: 6px; width:100%; padding: 6px; background:#1D9E75; color:#fff; border:none; border-radius: 8px; font-size: 13px; cursor:pointer;">Add</button>
-  <p id="add-contact-error" style="font-size:11px; color:#E24B4A; margin-top:4px; display:none;"></p>
+<div class="users-sidebar" id="users-sidebar">
+  <div class="users-header">
+    Contacts
+    <button onclick="showAddContact()" id="add-btn">+</button>
+  </div>
+  <div id="add-contact-form" style="display:none; padding: 10px;">
+    <input type="text" id="contact-email" placeholder="Email Google..." style="width:100%; padding: 6px 10px; border: 0.5px solid rgba(0,0,0,0.18); border-radius: 8px; font-size: 13px; outline:none;" />
+    <button onclick="addContact()" style="margin-top: 6px; width:100%; padding: 6px; background:#1D9E75; color:#fff; border:none; border-radius: 8px; font-size: 13px; cursor:pointer;">Add</button>
+    <p id="add-contact-error" style="font-size:11px; color:#E24B4A; margin-top:4px; display:none;"></p>
+  </div>
+  <div id="users-list"></div>
 </div>
 
 <div class="chat-wrapper">
