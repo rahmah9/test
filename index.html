@@ -517,11 +517,12 @@ function openRoom(myUid, otherUid, otherName, itemEl) {
     });
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
   });
-  window.backToContacts = () => {
+ 
+}
+   window.backToContacts = () => {
   document.querySelector(".users-sidebar").classList.remove("hidden-view");
   document.querySelector(".chat-wrapper").classList.remove("active-view");
 };
-}
 window.loginGoogle = async () => {
   try {
     await signInWithPopup(auth, provider);
